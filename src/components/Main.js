@@ -57,79 +57,107 @@ const Main = () => {
   console.log(parseInt(upper + lower + number + symbol) + parseInt(slider));
   return (
     <div className="container">
-      <div className="password">{password}</div>
-      <button
-        type="button"
-        className="btn btn-info"
-        onClick={() => {
-          navigator.clipboard.writeText(password);
-        }}
-      >
-        COPY
-      </button>
-      <hr></hr>
-      <label htmlFor="customRange2" className="form-label">
-        Character Length
-      </label>
-      <RangeSlider
-        max={16}
-        value={slider}
-        onChange={(e) => setSlider(e.target.value)}
-      />
-      <div className="form-check">
-        <input
-          className="form-check-input"
-          type="checkbox"
-          value=""
-          id="flexCheckDefault"
-          onClick={() => setUpper(!upper)}
-        />
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-          Include Uppercase Letters
-        </label>
+      <h1>Password Generator with React</h1>
+      <div className="row">
+        <div className="col">
+          <div className="password">{password}</div>
+        </div>
+        <div className="col">
+          <button
+            type="button"
+            className="btn btn-info"
+            onClick={() => {
+              navigator.clipboard.writeText(password);
+            }}
+          >
+            COPY
+          </button>
+        </div>
       </div>
-      <div className="form-check">
-        <input
-          className="form-check-input"
-          type="checkbox"
-          value=""
-          id="flexCheckDefault"
-          onClick={() => setLower(!lower)}
-        />
-        <label className="form-check-label" htmlFor="flexCheckChecked">
-          Include Lowercase Letters
-        </label>
+      <div className="row">
+        <div className="col">
+          <label htmlFor="customRange2" className="form-label">
+            Character Length
+          </label>
+        </div>
+        <div className="col">
+          <RangeSlider
+            max={16}
+            value={slider}
+            onChange={(e) => setSlider(e.target.value)}
+          />
+        </div>
       </div>
-      <div className="form-check">
-        <input
-          className="form-check-input"
-          type="checkbox"
-          value=""
-          id="flexCheckDefault"
-          onClick={() => setNumber(!number)}
-        />
-        <label className="form-check-label" htmlFor="flexCheckChecked">
-          Include Numbers
-        </label>
+      <div className="row">
+        <div className="col">
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+              onClick={() => setUpper(!upper)}
+            />
+            <label className="form-check-label" htmlFor="flexCheckDefault">
+              Include Uppercase Letters
+            </label>
+          </div>
+        </div>
+        <div className="col">
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+              onClick={() => setLower(!lower)}
+            />
+            <label className="form-check-label" htmlFor="flexCheckChecked">
+              Include Lowercase Letters
+            </label>
+          </div>
+        </div>
       </div>
-      <div className="form-check">
-        <input
-          className="form-check-input"
-          type="checkbox"
-          value=""
-          id="flexCheckDefault"
-          onClick={() => setSymbol(!symbol)}
-        />
-        <label className="form-check-label" htmlFor="flexCheckChecked">
-          Include Symbols
-        </label>
+      <div className="row">
+        <div className="col">
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+              onClick={() => setNumber(!number)}
+            />
+            <label className="form-check-label" htmlFor="flexCheckChecked">
+              Include Numbers
+            </label>
+          </div>
+        </div>
+        <div className="col">
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+              onClick={() => setSymbol(!symbol)}
+            />
+            <label className="form-check-label" htmlFor="flexCheckChecked">
+              Include Symbols
+            </label>
+          </div>
+        </div>
       </div>
-
-      <span>Strength: </span>
-      <span>
-        <strong>{str}</strong>
-      </span>
-      <br />
+      <div className="row">
+        <div className="col">
+          <span>Strength: </span>
+        </div>
+        <div className="col">
+          <span>
+            <strong>{str}</strong>
+          </span>
+        </div>
+      </div>
       <button type="button" className="btn btn-primary" onClick={handleGen}>
         Generate Password
       </button>
