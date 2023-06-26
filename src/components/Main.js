@@ -31,9 +31,9 @@ const Main = () => {
   };
 
   useEffect(() => {
-    let strLevel = parseInt(slider);
+    let strLevel = parseInt(slider) + parseInt(upper + lower + number + symbol);
 
-    if (strLevel > 10) {
+    if (strLevel >= 10) {
       setStr("Strong");
     } else if (strLevel <= 9 && strLevel >= 6) {
       setStr("Medium");
@@ -41,7 +41,7 @@ const Main = () => {
       setStr("Weak");
     }
   }, [upper, lower, number, symbol, slider]);
-  console.log(parseInt(upper + lower + number + symbol) + slider);
+  console.log(parseInt(upper + lower + number + symbol) + parseInt(slider));
   return (
     <div className="container">
       <div className="password">{password}</div>
