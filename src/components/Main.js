@@ -12,18 +12,24 @@ const Main = () => {
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     const charactersLength = characters.length;
     let counter = 0;
-    while (counter < 8) {
+    while (counter < slider) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
       counter += 1;
     }
-    console.log(result);
+
     setPassword(result);
   };
 
   return (
     <div className="container">
       <div className="password">{password}</div>
-      <button type="button" className="btn btn-info">
+      <button
+        type="button"
+        className="btn btn-info"
+        onClick={() => {
+          navigator.clipboard.writeText(password);
+        }}
+      >
         COPY
       </button>
       <hr></hr>
