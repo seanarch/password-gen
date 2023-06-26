@@ -61,7 +61,7 @@ const Main = () => {
       <h1>Password Generator with React</h1>
       <div className="row">
         <div className="col">
-          <div className="password">{password}</div>
+          {password && <div className="password">{password}</div>}
         </div>
         <div className="col">
           <button
