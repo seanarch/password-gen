@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RangeSlider from "react-bootstrap-range-slider";
+import "./Main.css";
 
 const Main = () => {
   const [password, setPassword] = useState("DefaultPassword");
@@ -65,7 +66,6 @@ const Main = () => {
         <div className="col">
           <button
             type="button"
-            className="btn btn-info"
             onClick={() => {
               navigator.clipboard.writeText(password);
             }}
@@ -158,7 +158,7 @@ const Main = () => {
           </span>
         </div>
       </div>
-      <button type="button" className="btn btn-primary" onClick={handleGen}>
+      <button type="button" onClick={handleGen}>
         Generate Password
       </button>
     </div>
