@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import RangeSlider from "react-bootstrap-range-slider";
-import PasswordGen from "./PasswordGen";
 
 const Main = () => {
   const [password, setPassword] = useState("DefaultPassword");
@@ -15,10 +14,24 @@ const Main = () => {
     let result = "";
     const lowercaseChr = "abcdefghijklmnopqrstuvwxyz";
     const uppercaseChr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const numbers = "0123456789";
-    const symbols = "!@#$%^&*()_+|";
+    const nums = "0123456789";
+    const syms = "!@#$%^&*()_+|";
 
-    const characters = "abcdefghijklmnopqrstuvwxyz";
+    let characters = "";
+    if (upper) {
+      characters += uppercaseChr;
+    }
+    if (number) {
+      characters += nums;
+    }
+
+    if (symbol) {
+      characters += syms;
+    }
+
+    if (lower) {
+      characters += lowercaseChr;
+    }
 
     const charactersLength = characters.length;
     let counter = 0;
@@ -111,16 +124,7 @@ const Main = () => {
           Include Symbols
         </label>
       </div>
-      {/* {console.log(
-        "Upper: ",
-        upper,
-        "Lower: ",
-        lower,
-        "Num: ",
-        number,
-        "Sym: ",
-        symbol
-      )} */}
+
       <span>Strength: </span>
       <span>
         <strong>{str}</strong>
