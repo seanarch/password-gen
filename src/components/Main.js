@@ -65,6 +65,7 @@ const Main = () => {
         </div>
         <div className="col">
           <button
+            className="copyBtn"
             type="button"
             onClick={() => {
               navigator.clipboard.writeText(password);
@@ -158,7 +159,7 @@ const Main = () => {
           </span>
         </div>
       </div>
-      <button type="button" onClick={handleGen}>
+      <button className="generateBtn" type="button" onClick={handleGen}>
         Generate Password
       </button>
     </div>
